@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://anstjq1038.github.io/digital-namecard/">
 <meta property="og:title" content="정명옥 · 유아교육 프리랜서 (33년 경력)">
 <meta property="og:description" content="놀이 속에서 자연스럽게 한글·수학·가베를 배워요 · 문의 010-5819-9112">
-<meta property="og:image" content="https://anstjq1038.github.io/digital-namecard/og.png?v=3">
+<meta property="og:image" content="https://anstjq1038.github.io/digital-namecard/og.png?v=4">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -167,8 +167,8 @@
     <p class="role" id="role">유아교육 프리랜서 · 33년 경력</p>
     <svg class="wave" viewBox="0 0 44 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 5 Q8 1 14 5 T26 5 T38 5"/></svg>
 
-    <p class="bio" id="bio">놀이 속에서 아이가 스스로 한글·수학·가베를
-    만나도록, 즐거운 배움을 이끌어 드립니다.</p>
+    <p class="bio" id="bio">아이들의 눈높이에서 놀이와 예술로
+    성장을 돕는 유아교육 전문가입니다.</p>
 
     <div class="tags" id="tags"></div>
 
@@ -181,16 +181,10 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         전화 걸기
       </button>
-      <div class="btn-row">
-        <button class="btn btn-ghost" id="saveBtn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          연락처 저장
-        </button>
-        <button class="btn btn-ghost" id="shareBtn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
-          명함 공유
-        </button>
-      </div>
+      <button class="btn btn-ghost" id="shareBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+        명함 공유
+      </button>
     </div>
 
     <p class="foot" id="foot">서울·경기 방문 수업 · 상담 문의 환영</p>
@@ -208,13 +202,10 @@ const CARD = {
   이름:        "정명옥",
   직함:        "유아교육 프리랜서 · 33년 경력",
   사진:        "photo.jpg",          // 상단 배너 사진 파일명 (같은 폴더에 두면 됩니다)
-  소개:        "놀이 속에서 아이가 스스로 한글·수학·가베를 만나도록, 즐거운 배움을 이끌어 드립니다.",
+  소개:        "아이들의 눈높이에서 놀이와 예술로 성장을 돕는 유아교육 전문가입니다.",
   전문분야:    ["한글놀이", "수학놀이", "가베놀이"],
   전화번호:    "010-5819-9112",
-  카카오:      "hanulteacher",        // 카카오톡 ID (없으면 "" 로 비워두세요)
-  이메일:      "hanul.teacher@example.com",
-  지역:        "서울·경기 방문 수업",
-  하단문구:    "서울·경기 방문 수업 · 상담 문의 환영"
+  하단문구:    "상담 문의 언제든 환영합니다"
 };
 /* ================================================================
    ▲▲▲  수정 끝. 아래는 건드리지 않아도 됩니다.  ▲▲▲
@@ -242,10 +233,7 @@ document.getElementById('tags').innerHTML =
 
 // 연락처 줄 구성
 const rows = [
-  {ic:ic.phone, lbl:'전화',      val:CARD.전화번호, href:'tel:'+CARD.전화번호.replace(/[^0-9+]/g,'')},
-  {ic:ic.chat,  lbl:'카카오톡',  val:CARD.카카오 ? '@'+CARD.카카오 : '', href:''},
-  {ic:ic.mail,  lbl:'이메일',    val:CARD.이메일, href:'mailto:'+CARD.이메일},
-  {ic:ic.pin,   lbl:'수업 지역', val:CARD.지역,   href:''}
+  {ic:ic.phone, lbl:'전화', val:CARD.전화번호, href:'tel:'+CARD.전화번호.replace(/[^0-9+]/g,'')}
 ].filter(r => r.val);
 
 document.getElementById('contacts').innerHTML = rows.map(r => {
@@ -268,25 +256,6 @@ function toast(msg){
   t.textContent = msg; t.classList.add('on');
   clearTimeout(tmr); tmr = setTimeout(()=>t.classList.remove('on'), 2200);
 }
-
-// 연락처 저장 (vCard 다운로드 → 휴대폰 주소록에 추가)
-document.getElementById('saveBtn').onclick = () => {
-  const v = [
-    'BEGIN:VCARD','VERSION:3.0',
-    'FN:'+CARD.이름,
-    'TEL;TYPE=CELL:'+CARD.전화번호,
-    'EMAIL:'+CARD.이메일,
-    'TITLE:'+CARD.직함,
-    CARD.카카오 ? 'NOTE:카카오톡 @'+CARD.카카오 : '',
-    'END:VCARD'
-  ].filter(Boolean).join('\n');
-  const blob = new Blob([v], {type:'text/vcard'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = CARD.이름 + '.vcf';
-  a.click();
-  toast('연락처 파일을 저장했어요');
-};
 
 // 명함 공유
 document.getElementById('shareBtn').onclick = async () => {

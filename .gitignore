@@ -15,5 +15,9 @@
 kids-photos/
 private/
 
+# 배포 스크립트·테스트 파일
+*.ps1
+업로드테스트.html
+
 # 미리보기 임시 파일
 _preview_*.png

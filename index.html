@@ -95,7 +95,8 @@
   .bio{
     text-align:center;color:var(--ink-soft);
     font-size:14.5px;line-height:1.65;
-    margin:18px auto 0;max-width:30ch;
+    margin:18px auto 0;max-width:32ch;
+    word-break:keep-all;
   }
 
   /* 전문분야 태그 */
@@ -202,7 +203,7 @@ const CARD = {
   이름:        "정명옥",
   직함:        "유아교육 프리랜서 · 33년 경력",
   사진:        "photo.jpg",          // 상단 배너 사진 파일명 (같은 폴더에 두면 됩니다)
-  소개:        "아이들의 눈높이에서 놀이와 예술로 성장을 돕는 유아교육 전문가입니다.",
+  소개:        "아이들의 눈높이에서 놀이와 예술로\n성장을 돕는 유아교육 전문가입니다.",  // \n 위치에서 줄바꿈
   전문분야:    ["한글놀이", "수학놀이", "가베놀이"],
   전화번호:    "010-5819-9112",
   하단문구:    "상담 문의 언제든 환영합니다"
@@ -223,7 +224,7 @@ const svg = p => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" str
 document.getElementById('photo').src          = CARD.사진;
 document.getElementById('name').textContent   = CARD.이름;
 document.getElementById('role').textContent   = CARD.직함;
-document.getElementById('bio').textContent    = CARD.소개;
+document.getElementById('bio').innerHTML      = CARD.소개.replace(/\n/g, '<br>');
 document.getElementById('foot').textContent   = CARD.하단문구;
 document.title = CARD.이름 + " · 디지털 명함";
 
